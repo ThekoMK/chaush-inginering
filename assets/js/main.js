@@ -209,4 +209,45 @@ document.addEventListener('DOMContentLoaded', () => {
     aos_init();
   });
 
+  async function handleSubmit(event) {
+    event.preventDefault();
+    
+    const form = event.target;
+    const formData = new FormData(form);
+    const formName = form.getAttribute('name');
+    
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString()
+      });
+      
+      if (response.ok) {
+        // Show success message
+        form.querySelector('.loading').style.display = 'none';
+        form.querySelector('.error-message').style.display = 'none';
+        form.querySelector('.sent-message').style.display = 'block';
+        
+        // Reset form
+        form.reset();
+        
+        // Reset reCAPTCHA if present
+        if (typeof grecaptcha !== 'undefined') {
+          grecaptcha.reset();
+        }
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      // Show error message
+      form.querySelector('.loading').style.display = 'none';
+      form.querySelector('.error-message').textContent = 'Form submission failed. Please try again.';
+      form.querySelector('.error-message').style.display = 'block';
+      form.querySelector('.sent-message').style.display = 'none';
+    }
+    
+    return false;
+  }
+
 });
