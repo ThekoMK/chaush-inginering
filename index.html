@@ -112,38 +112,40 @@
 
           <div class="col-lg-6 d-flex align-items-center" data-aos="fade-up">
             <div class="content">
-              <h3>Контактирајте нѐ денес!</h3>
-              <p>Имате прашања или потреба од понуда? Нашиот тим е тука за вас. Пополнете ја контакт-формата и ќе ви одговориме во најкраток можен рок!.</p>
+              <h3>Контактирајте нѐ денес!</h3>
+              <p>Имате прашања или потреба од понуда? Нашиот тим е тука за вас. Контактирајте нѐ преку телефон или е-пошта и ќе ви одговориме во најкраток можен рок!</p>
             </div>
           </div>
 
           <div class="col-lg-5" data-aos="fade">
-            <form name="quote" method="POST" action="/" netlify class="php-email-form" data-netlify="true" data-netlify-recaptcha="true" onsubmit="return handleSubmit(event)">
-              <h3>Контактирајте нѐ</h3>
-              <div class="row gy-3">
-                <div class="col-md-12">
-                  <input type="text" name="name" class="form-control" placeholder="Име" required>
-                </div>
-                <div class="col-md-12">
-                  <input type="email" class="form-control" name="email" placeholder="Е-пошта" required>
-                </div>
-                <div class="col-md-12">
-                  <input type="text" class="form-control" name="phone" placeholder="Телефон" required>
-                </div>
-                <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Порака" required></textarea>
-                </div>
-                <div class="col-md-12 text-center">
-                  <div class="loading">Се вчитува...</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Вашата порака е испратена!</div>
-                  <!-- Netlify's built-in reCAPTCHA -->
-                  <div data-netlify-recaptcha="true"></div>
-                  <button type="submit">Испрати</button>
+            <div class="info-wrap bg-white p-5">
+              <h3 class="mb-4">Контакт Информации</h3>
+              
+              <div class="info-item d-flex mb-3">
+                <div class="icon flex-shrink-0"><i class="bi bi-geo-alt"></i></div>
+                <div class="text">
+                  <h5 class="mb-0">Адреса</h5>
+                  <p class="mb-0">Македонска Каменица</p>
                 </div>
               </div>
-            </form>
-          </div><!-- End Quote Form -->
+
+              <div class="info-item d-flex mb-3">
+                <div class="icon flex-shrink-0"><i class="bi bi-phone"></i></div>
+                <div class="text">
+                  <h5 class="mb-0">Телефон</h5>
+                  <p class="mb-0">+38978877995</p>
+                </div>
+              </div>
+
+              <div class="info-item d-flex">
+                <div class="icon flex-shrink-0"><i class="bi bi-envelope"></i></div>
+                <div class="text">
+                  <h5 class="mb-0">Е-пошта</h5>
+                  <p class="mb-0">nikolovskicaki@gmail.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
         </div>
 
